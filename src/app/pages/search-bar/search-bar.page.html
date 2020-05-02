@@ -1,0 +1,28 @@
+<ion-header no-border>
+  <ion-toolbar>
+
+    <ion-buttons slot='start'>
+      <ion-back-button defaultHref='/'></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>searchBar</ion-title>
+  </ion-toolbar>
+
+  <!-- [debounce]="250"  se utiliza para que no llame al evento cada vez que cambie, 
+  es decir, cada 250 milisegundos se llama, hayas pulsado una tecla o si escribes deprisa -->
+  <ion-searchbar animated placeholder="Filter Pizza"
+  inputmode="decimal" type="decimal"
+  (ionChange)="buscar($event)"
+  showCancelButton="250"></ion-searchbar>
+
+</ion-header>
+
+<ion-content>
+
+<ion-list>
+  <ion-item *ngFor='let album of albumes | filtro: textoBuscar: "title"'>
+    {{album.title}}
+  </ion-item>
+</ion-list>
+
+</ion-content>

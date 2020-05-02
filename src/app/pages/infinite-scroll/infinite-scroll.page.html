@@ -1,0 +1,23 @@
+<app-header titulo='Infinite-Scroll'></app-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item *ngFor='let item of data; let i = index'>
+      <ion-label>
+        Item: {{i+1}}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- threshold es lo cerca del fin de la página cuando se hará la petición para traer los siguientes elementos -->
+  <!-- cargarSiguiente se lanzará cuando el usuario llegue a 100px del final -->
+  <!-- spinner se utilizará para  -->
+  <ion-infinite-scroll threshold="150px" (ionInfinite)="cargarSiguientes($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="crescent"
+      loadingText="Cargando...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

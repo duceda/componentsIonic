@@ -1,0 +1,41 @@
+<app-header titulo='Card'></app-header>
+
+<ion-content padding>
+
+  <!-- Mode es para md o ios y es para determinar los estilos de la plataforma a usar -->
+  <!-- Es para simular en android los estilos de ios o a de material design -->
+  <ion-card mode='ios'>
+    <ion-card-header>
+      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      <ion-card-title>Card Title</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Keep close to Nature's heart... and break clear away, once in awhile,
+      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+    </ion-card-content>
+  </ion-card>
+
+
+  <!-- color='light' esto lo coge del fichero variables scss -->
+  <ion-card>
+    <ion-item color='primary'>
+      <ion-icon color='light' slot='start' name='pin'></ion-icon>
+      <ion-label>Marcador</ion-label>
+    </ion-item>
+
+    <ion-card-content>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat incidunt quo tempora nemo libero perspiciatis
+      ad hic molestias consectetur nesciunt, aliquam adipisci quis voluptatem rerum, voluptate nostrum ipsa harum eum.
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card>
+    <ion-img src='/assets/shapes.svg'> </ion-img>
+    <ion-card-content>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad quibusdam sed aperiam voluptatem aut ea recusandae minus distinctio debitis error obcaecati molestias, voluptas perferendis corrupti autem alias? Expedita, porro omnis.
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

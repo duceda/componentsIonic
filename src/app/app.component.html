@@ -1,0 +1,41 @@
+<ion-app>
+
+  <!-- <app-menu></app-menu> -->
+
+  <!-- ion-split-pane -> es para hacer que se comparta el menú con la página
+   cuando la pantalla es muy grande -->
+   <!--when='md' es para que aunque la pantalla no sea muy grande, si se 
+  pone en modo horizontal y cabe también se muestre  -->
+  <ion-split-pane when='md' contentId="principal">
+
+    <!-- Es el mismo menu que <app-menu></app-menu> -->
+    <ion-menu side="start" contentId='principal' menuId="primerMenu">
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title>Menu de Componentes</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+
+        <ion-list>
+
+          <!-- autoHide='false' es para que no se oculte de forma automática -->
+          <ion-menu-toggle autoHide='false' *ngFor='let c of components | async'>
+            <ion-item [routerLink]='c.redirectTo'>
+              <ion-icon [name]='c.icon'></ion-icon>
+              <ion-label> {{c.name}}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+        </ion-list>
+
+      </ion-content>
+    </ion-menu>
+
+    <ion-router-outlet id='principal'></ion-router-outlet>
+
+  </ion-split-pane>
+
+  <!-- <ion-router-outlet id='principal'></ion-router-outlet> -->
+</ion-app>
